@@ -1,0 +1,13 @@
+* {
+    font-family: "Roboto";
+}
+
+.page {
+    display: flex;
+    flex-direction: row;
+}
+
+.right {
+    display: flex;
+    flex-direction: column;
+}
