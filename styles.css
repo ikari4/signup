@@ -32,8 +32,42 @@
 }
 
 .middle {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: stretch;
     background-color: white;
 }
+
+form {
+    font-size: small;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: space-around;
+    background-color: white;
+}
+
+.form-top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+.form-left {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    background-color: white;
+}
+
+.form-right {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    background-color: white;   
+} 
 
 .bottom {
     background-color: blue;
