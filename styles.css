@@ -12,7 +12,7 @@
 .left {
     display: flex;
     flex-direction: column;
-    background-color: blueviolet;
+    background-color: lightblue;
     justify-content: center;
     align-items: center;
     width: 400px;
@@ -28,7 +28,8 @@
 }
 
 .top {
-    background-color: red;
+    background-color: darkblue;
+    color: white;
 }
 
 .middle {

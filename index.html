@@ -8,31 +8,30 @@
 </head>
 <body>
     <div class="page">
-        <div class="left">LEFT</div>
+        <div class="left">Left Column</div>
         <div class="right">
             <div class="top">
-                This is the top section. This is where I'd put some basic 
-                information for the person filling out the form.
+                Header
             </div>
             <div class="middle">
-                <div class="m-top">Let's do this!</div>
+                <div class="m-top">Enter Info</div>
                 <form>
                     <div class="form-top">
                         <div class="form-left">
                             <label for="first_name">First Name:</label>
-                            <input type="text" id="first_name">
+                            <input type="text" id="first_name" name="first_name">
                             <label for="email">email Address:</label>
-                            <input type="email" id="email">
+                            <input type="email" id="email" name="email">
                             <label for="password">Password:</label>
-                            <input type="password" id="password">
+                            <input type="password" id="password" name="password">
                         </div>
                         <div class="form-right">
                             <label for="last_name">Last Name:</label>
-                            <input type="text" id="first_name">
+                            <input type="text" id="last_name" name="last_name">
                             <label for="phone">Phone Number:</label>
-                            <input type="text" id="phone">
+                            <input type="text" id="phone" name="phone">
                             <label for="confirm_pw">Confirm Password:</label>
-                            <input type="password" id="confirm_pw">
+                            <input type="password" id="confirm_pw" name="confirm_pw">
                         </div>
                     </div>
                     <div class="buttons">
@@ -42,5 +41,21 @@
             </div>
         </div>
     </div>
+    <script>
+        const form = document.querySelector("form");
+        form.addEventListener("submit", async (e) => {
+            e.preventDefault();
+            const data = Object.fromEntries(new FormData(form).entries());
+            
+            const response = await fetch("/api/signup", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(data),
+            });
+
+            const result = await response.json();
+            alert(result.message);
+        });
+    </script>
 </body>
 </html>
